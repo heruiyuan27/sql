@@ -1,0 +1,16 @@
+CREATE TABLE emp(
+	id INT PRIMARY KEY,
+	NAME VARCHAR(20),
+	dep INT,
+	CONSTRAINT emp_dep_id FOREIGN KEY (dep) REFERENCES dep(id)
+	);
+
+
+SELECT * FROM dep;
+
+
+ALTER TABLE emp DROP FOREIGN KEY emp_dep_id;
+
+ALTER TABLE employee ADD CONSTRAINT emp_depid_dep_id 
+FOREIGN KEY (depid) REFERENCES depart(id)
+ON UPDATE CASCADE ON DELETE CASCADE;
