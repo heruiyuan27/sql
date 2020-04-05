@@ -1,0 +1,11 @@
+FLUSH PRIVILEGES;
+
+CREATE USER 'zhang'@'%' IDENTIFIED BY '123';
+UPDATE USER SET PASSWORD = PASSWORD('abc') WHERE USER = 'zhang';
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('root');
+
+SHOW GRANTS FOR 'zhang'@'%';
+GRANT ALL ON *.* TO 'zhang'@'%';
+
+SELECT * FROM USER;
