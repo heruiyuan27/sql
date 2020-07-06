@@ -50,7 +50,7 @@ SELECT 	t1.*,t2.`name` FROM emp t1 LEFT JOIN dept t2 ON t1.`dept_id` = t2.`id`;
 * 语法：select 字段列表 from 表1 right [outer] join 表2 on 条件；
 * 查询的是右表所有数据以及其交集部分。
 * 例子：
-SELECT 	* FROM dept t2 RIGHT JOIN emp t1 ON t1.`dept_id` = t2.`id`;
+SELECT * FROM dept t2 RIGHT JOIN emp t1 ON t1.`dept_id` = t2.`id`;
 
 ## 子查询
 
@@ -132,7 +132,21 @@ FROM emp t1 LEFT JOIN emp t2
 ON t1.`mgr`=t2.`id`;
 ```
 
+## 组合查询
+
+```mysql
+SELECT vend_id, prod_id, prod_price
+FROM products
+WHERE prod_price <= 5
+UNION
+SELECT vend_id, prod_id, prod_price
+FROM products
+WHERE vend_id IN (1001 ,1002)
+ORDER BY vend_id, prod_price;
+```
+
 #事务
+
 ##事务的基本介绍
 概念：如果一个包含多个步骤的业务操作，被事务管理，那么这些操作要么同时成功，要么同时失败。
 
