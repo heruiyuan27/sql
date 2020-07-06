@@ -332,3 +332,19 @@ select * from student limit 0 3
 
 select prod_name from products limit 5,5 【 limit 1,1 代表第二行】
 
+## 计算字段
+
+```
+select concat( RTrim(vend_name) , '(' , RTrim(vend_ country) , ')')  as  vend_title  
+from vendors
+order by vend_names
+
+
+SELECT prod_ id,
+quantity ,
+item_ price ,
+quantity*item_ price AS expanded_ price
+FROM orderitems
+WHERE order_ num = 20005 ;【数学运算】
+```
+
