@@ -227,7 +227,7 @@ select name,age from student
 
 select name as 姓名,age as 年龄 from student
 
-select st.name as 姓名,age as 年龄 from student as st  
+select st.name as 姓名,age as 年龄 from student as st 【表别名的使用只在查询过程中，不返回客户机】
 
 ------------------------
 
@@ -320,7 +320,7 @@ where和having区别
 - where在分组前限定，不满足条件不参与分组。having在分组后限定，不满足条件不会被查询出来
 - where不跟聚合函数，having可以判断聚合函数
 
-## 分页查询
+## 分页查询LIMIT
 
 limit 开始的索引 每页显示条数
 
@@ -329,4 +329,6 @@ limit 开始的索引 每页显示条数
 select * from student limit 0 3
 
 方言
+
+select prod_name from products limit 5,5 【 limit 1,1 代表第二行】
 
