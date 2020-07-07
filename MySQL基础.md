@@ -91,7 +91,7 @@ MySQL 数据库的 SQL 语句**不区分大小写**，**关键字**建议使用*
 * create database 数据库名称==character set 字符集名==;
 * 练习： 创建db4数据库，判断是否存在，并制定字符集为gbk
 	* create database if not exists db4 character set gbk;
-2. **R(Retrieve)：查询**
+2. **R(Retrieve):查询**
 * 查询所有数据库的名称:
 	* ==show databases==;
 * 查询某个数据库的字符集:查询某个数据库的创建语句
@@ -139,7 +139,7 @@ MySQL 数据库的 SQL 语句**不区分大小写**，**关键字**建议使用*
 **R(Retrieve)：查询**
 
 * ==show tables==; 数据库下的表格
-* ==show create table student==;
+* ==show create table student==;查看创建表时的语句
 * ==desc 表名==; 具体表格的结构
 
 **U(Update)：修改**
@@ -334,16 +334,15 @@ select prod_name from products limit 5,5 【 limit 1,1 代表第二行】
 
 ## 计算字段
 
-```
+```mysql
 select concat( RTrim(vend_name) , '(' , RTrim(vend_ country) , ')')  as  vend_title  
 from vendors
 order by vend_names
 
-
-SELECT prod_ id,
-quantity ,
-item_ price ,
-quantity*item_ price AS expanded_ price
+SELECT  prod_ id,
+		quantity ,
+		item_ price ,
+		quantity*item_ price AS expanded_ price
 FROM orderitems
 WHERE order_ num = 20005 ;【数学运算】
 ```
